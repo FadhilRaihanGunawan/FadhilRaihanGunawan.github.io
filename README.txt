@@ -1,0 +1,1 @@
+Hey there! Welcome to my E-Portfolio Github by Fadhil Raihan Gunawan A22EC4031. This is where I placed the files for my github (or in the words, where my E-Portfolio is published. Feel free to take a look at my E-Portfolio which can be located in the "About" respitory which is in the right side of the github. Thank you for visiting my Github 😊
