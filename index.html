@@ -323,14 +323,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <div class="sec-head rv"><h2>About</h2></div>
       <div class="about-grid">
         <div class="about-text rv">
-          <p>I'm Fadhil, a final-year Bachelor of Computer Science (Software Engineering) student at Universiti Teknologi Malaysia. I'm from Indonesia and study in Johor Bahru. This semester I'm in Jakarta as a Supply Chain Intern (IT) at PT Sinar Sosro Gunung Slamat.</p>
+          <p>I'm Fadhil, a final-year Bachelor of Computer Science (Software Engineering) student at Universiti Teknologi Malaysia. I'm from Indonesia and study in Johor Bahru. Before Malaysia, I went to school in Saudi Arabia, the UAE and Indonesia. This semester I'm in Jakarta as a Supply Chain Intern (IT) at PT Sinar Sosro Gunung Slamat.</p>
           <p>Most of my projects are web apps, with some mobile and machine learning work. At my internship I build dashboards that warehouse staff use to enter and check their data. My final year project compares spam detection models on YouTube and Twitter, and my incident management system reached the Top 10 of the DHL DAC Challenge 3.0.</p>
           <blockquote>In a world that only recognises better and not enough, I'm on a non-stop journey of learning and growth.</blockquote>
         </div>
         <dl class="facts rv" style="--d:.12s">
           <div><dt>CGPA</dt><dd>3.66 / 4.00</dd></div>
           <div><dt>Dean's List</dt><dd>4 times</dd></div>
-          <div><dt>IELTS Academic</dt><dd>7.0 (CEFR C1)</dd></div>
+          <div><dt>IELTS Academic</dt><dd>7.0 (CEFR C1), 8.5 in reading</dd></div>
           <div><dt>Graduating</dt><dd>March 2027</dd></div>
           <div><dt>Based in</dt><dd>Johor Bahru and Jakarta</dd></div>
           <div><dt>Languages</dt><dd>Bahasa Indonesia, English, Bahasa Melayu, basic Arabic, beginner French</dd></div>
@@ -376,18 +376,21 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <article class="row rv"><h3>Esport Division PIC</h3><span class="org">IOD UTM PPI</span></article>
         <article class="row rv"><h3>Valorant In-Game Leader</h3><span class="org">SPARTAN UTM PPI</span></article>
         <article class="row rv"><h3>Multimedia Videographer</h3><span class="org">Arkananta UTM PPI</span></article>
+        <article class="row rv"><h3>Mentor, VIBEATHON 2026</h3><span class="org">Vibe-coding hackathon at UTM</span></article>
         <article class="row rv"><h3>Research Manuscript Editor</h3><span class="org">English editing for graduate students</span></article>
         <article class="row rv"><h3>UdukIN</h3><span class="org">Entrepreneurship venture</span></article>
       </div>
       <div class="two">
         <div class="rv">
-          <h3 class="sub">Awards and certificates</h3>
+          <h3 class="sub">Awards, certificates and research</h3>
           <ul class="awards">
             <li><b>Top 10 Finalist, DHL DAC Challenge 3.0</b><span>DHL APSSC x UTM, "Turn Chaos Into Genius"</span></li>
             <li><b>Dean's List, four times</b><span>Universiti Teknologi Malaysia</span></li>
             <li><b>IELTS Academic, Overall Band 7.0</b><span>CEFR C1</span></li>
+            <li><b>Short paper submitted to IJIC</b><span>A Study on Identification of Social Media Spam Messages Using Different Machine Learning Techniques, International Journal of Innovative Computing</span></li>
             <li><b>UTM AI Ideathon (Research-Based)</b><span>FCRI 2025</span></li>
             <li><b>Talent and Competency Management Course</b><span>UTM Career Centre</span></li>
+            <li><b>Make Yourself Memorable</b><span>Online Business School UK, certificate of completion</span></li>
           </ul>
         </div>
         <div class="rv" style="--d:.1s">
@@ -396,7 +399,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
             <span class="when">Mar 2023 to Mar 2027</span>
             <h4>Bachelor of Computer Science (Software Engineering) with Honours</h4>
             <p>Universiti Teknologi Malaysia, Faculty of Computing</p>
-            <p>CGPA 3.66 out of 4.00. Relevant coursework: Software Construction, Real-Time Software Engineering, Web Technology, Software Quality Assurance and Testing.</p>
+            <p>CGPA 3.66 out of 4.00. Final Year Project graded A in both semesters. Relevant coursework: Software Construction, Real-Time Software Engineering, Web Technology, Software Quality Assurance and Testing.</p>
           </div>
         </div>
       </div>
@@ -464,7 +467,9 @@ const PROJECTS = [
       "Compared TF-IDF with LinearSVC, TF-IDF with XGBoost, and frozen DistilBERT embeddings with XGBoost.",
       "Evaluated every pipeline in single-platform, cross-platform and concept drift settings on YouTube and Twitter datasets.",
       "Measured degradation as the drop in F1 score across platforms and over time.",
-      "Built a Streamlit interface to view the results. Embeddings are cached so runs are reproducible."],
+      "Built a Streamlit interface to view the results. Embeddings are cached so runs are reproducible.",
+      "Graded A (4.00) for both FYP 1 and FYP 2.",
+      "Wrote a short paper on the study with my supervisor and submitted it to the International Journal of Innovative Computing (IJIC)."],
     tags: ["Python", "scikit-learn", "XGBoost", "DistilBERT", "Streamlit"] },
   { id: "dhl", cat: "web", big: true, kicker: "Top 10 Finalist, DHL DAC 3.0", year: "", title: "DHL Incident Genius",
     blurb: "An incident reporting system where an RPA bot reads incoming reports and a rule engine sorts them onto a Kanban board.",
@@ -500,6 +505,13 @@ const PROJECTS = [
       "Ran user research with TVPSS staff and teachers from Johor to gather requirements and validate the designs.",
       "The team built the system with Java Spring MVC, Hibernate and MySQL."],
     tags: ["Figma", "User research", "Spring MVC"] },
+  { id: "irrigation", cat: "design", kicker: "HCI prototype", year: "2026", title: "Smart Irrigation App Redesign",
+    blurb: "An interactive mobile prototype that improves an existing smart irrigation app, based on an AQUArIUM evaluation.",
+    who: "Prototype designer and developer, team DeadlineZero",
+    pts: ["Our team evaluated an existing IoT smart irrigation system with the AQUArIUM framework for Real-Time Software Engineering.",
+      "I designed and built the improved prototype as one interactive HTML file, targeting transparency, attention and calmness.",
+      "Screens include a dashboard that explains why the pump is off, an adjustable moisture threshold, grouped notifications, a four-step onboarding wizard and an offline mode."],
+    tags: ["HTML and CSS", "JavaScript", "UI/UX"] },
   { id: "recipe", cat: "web", kicker: "Web app", year: "2023 to 2024", title: "Recipe Management System",
     blurb: "A recipe web app with user accounts. I built both the front-end and the back-end on my own.",
     who: "Sole full-stack developer",
