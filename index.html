@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio of Fadhil Raihan Gunawan, final-year Software Engineering student at Universiti Teknologi Malaysia. Web, mobile and machine learning projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Martian+Mono:wght@400;500&family=Tilt+Warp:XROT,YROT@-45..45,-45..45&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Martian+Mono:wght@400;500&family=Tilt+Warp:XROT,YROT@-45..45,-45..45&family=Unbounded:wght@500;700;900&family=Yellowtail&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Layout idea: full-width colour bands (space, blue, starlight). One thick ribbon is drawn down the page
@@ -20,6 +20,7 @@
   --mute-d:#a3b6dc;
   --mute-l:#46557a;
   --name:"Tilt Warp","Arial Black",Impact,sans-serif;
+  --script:"Yellowtail","Brush Script MT",cursive;
   --display:"Unbounded","Arial Black",Impact,system-ui,sans-serif;
   --body:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --mono:"Martian Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
@@ -86,17 +87,17 @@ h3{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:
 /* Hero */
 .hero{padding-top:clamp(84px,11vh,118px);padding-bottom:clamp(60px,8vw,110px)}
 .hero-name{container-type:inline-size}
-h1{font-family:var(--name);font-weight:400;text-transform:uppercase;font-size:14cqi;line-height:.9;letter-spacing:-.01em;color:var(--blue-hi);text-shadow:0 .04em 0 #0b1f5e,0 .08em 0 #071338,0 0 .5em rgba(74,134,255,.35)}
+h1{font-family:var(--script);font-weight:400;font-size:17cqi;line-height:1.02;letter-spacing:0;color:var(--blue-hi);padding-bottom:.08em;text-shadow:0 .04em 0 #0b1f5e,0 .08em 0 #071338,0 0 .5em rgba(74,134,255,.35)}
 h1 .w{display:block;white-space:nowrap}
 h1 .w i{font-style:normal}
-h1 .l{display:inline-block;font-variation-settings:"XROT" var(--xr,0),"YROT" var(--yr,0);transition:font-variation-settings .35s ease-out}
+h1 .l{display:inline-block;transform:translateY(var(--ty,0em)) rotate(var(--rot,0deg));transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 h1.wave .l{animation:letter .9s cubic-bezier(.3,.6,.3,1) both;animation-delay:calc(var(--i)*35ms)}
-@keyframes letter{0%{transform:translateY(0)}35%{transform:translateY(-.12em)}70%{transform:translateY(.04em)}100%{transform:translateY(0)}}
+@keyframes letter{0%{translate:0 0}35%{translate:0 -.12em}70%{translate:0 .04em}100%{translate:0 0}}
 .hero-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,80px);align-items:end;margin-top:clamp(18px,2.4vw,34px)}
 .hero-copy{display:grid;gap:18px;max-width:560px;padding-bottom:8px}
 .role-line{font-family:var(--display);font-weight:700;font-size:clamp(1.05rem,1.8vw,1.45rem);line-height:1.25;letter-spacing:-.02em;color:#fff}
 .lead{color:#d3defa;font-size:clamp(1rem,1.25vw,1.12rem)}
-.shot{position:relative;width:clamp(210px,25vw,340px);margin-top:-11.6cqi;transform:rotate(2deg);transition:transform .25s ease-out;transform-style:preserve-3d}
+.shot{position:relative;width:clamp(210px,25vw,340px);margin-top:-15cqi;transform:rotate(2deg);transition:transform .25s ease-out;transform-style:preserve-3d}
 .shot img{width:100%;height:auto;aspect-ratio:908/1200;object-fit:cover;border-radius:16px;border:3px solid #fff;box-shadow:0 30px 80px -20px rgba(33,87,242,.75)}
 .hint{margin-top:clamp(28px,4vw,52px);font-weight:600;font-size:.92rem;color:var(--mute-d);display:flex;align-items:center;gap:10px}
 .hint svg{width:16px;height:16px;animation:nudge 1.6s ease-in-out infinite}
@@ -210,7 +211,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   .menu-btn{display:block}
 }
 @media (max-width:760px){
-  h1{font-size:20cqi}
+  h1{font-size:30cqi}
   h1 .w i{display:block}
   .hero-row{grid-template-columns:1fr;align-items:start}
   .shot{order:-1;width:min(62vw,280px);justify-self:center;margin-top:66px}
@@ -598,8 +599,8 @@ function warp() {
   for (const el of letters) {
     const r = el.getBoundingClientRect(), dx = wx - (r.left + r.width / 2), dy = wy - (r.top + r.height / 2);
     const f = Math.exp(-(dx * dx + dy * dy) / (2 * 320 * 320));
-    el.style.setProperty("--yr", (clamp(dx / 7, -45, 45) * f).toFixed(1));
-    el.style.setProperty("--xr", (clamp(-dy / 6, -45, 45) * f).toFixed(1));
+    el.style.setProperty("--ty", (-.16 * f).toFixed(3) + "em");
+    el.style.setProperty("--rot", (clamp(dx / 22, -14, 14) * f).toFixed(1) + "deg");
   }
 }
 if (!reduce) addEventListener("pointermove", e => { if (e.pointerType !== "mouse" || scrollY > H) return; wx = e.clientX; wy = e.clientY; if (!warpQ) { warpQ = true; requestAnimationFrame(warp); } }, { passive: true });
